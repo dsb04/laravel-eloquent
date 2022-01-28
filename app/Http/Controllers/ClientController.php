@@ -94,4 +94,9 @@ class ClientController extends Controller
         $client = Client::where('name', '=', $name)->first();
     return response()->json($client);
     }
+    public function text($text)
+    {
+        $client = Client::where('text', '=', $text)->first();
+        return response()->json($client);
+    }
 }
