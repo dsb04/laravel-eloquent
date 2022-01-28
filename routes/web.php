@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientController;
 use App\Http\Controllers\BillController;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +15,52 @@ use App\Http\Controllers\BillController;
 |
 */
 
-Route::get('/clients/create', [ClientController::class,'create']);
-Route::post('/clients/store', [ClientController::class,'store']);
-Route::get('/clients/show/{client}', [ClientController::class,'show']);
-Route::get('/clients/name/{name}', [ClientController::class,'name']);
-Route::get('/clients/search/{text}', [ClientController::class,'text']);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/clients/create', [
+    ClientController::class, 
+    'create'
+]);
+
+Route::post('/clients/store', [
+    ClientController::class, 
+    'store'
+]);
+
+Route::get('/clients/show/{client}', [
+    ClientController::class, 
+    'show'
+]);
+
+Route::get('/clients/name/{name}', [
+    ClientController::class, 
+    'name'
+]);
+
+Route::get('/clients/search/{text}', [
+    ClientController::class, 
+    'text'
+]);
+
 Route::get('/clients/bills/{client}',[
     BillController::class, 
     'bills'
 ]);
-Route::get('/clients/expensive/{value}', [BillController::class,'expensive']);
+
+Route::get('/bills/expensive/{value}',[
+    BillController::class, 
+    'valores'
+]);
+
+Route::get('/bills/between/{value1}/{value2}',[
+    BillController::class, 
+    'valoresentre'
+]);
+
+
+Route::get('/clients/order',[
+    ClientController::class, 
+    'order'
+]);
