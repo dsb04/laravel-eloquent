@@ -83,13 +83,17 @@ class BillController extends Controller
     {
         //
     }
-    public function bills( $client)
-    { 
-        $bills = Bill::where('client_id', '=', $client)->get();
-        return response()->json($bills);
-    }
-    public function valores(Value $valor)
+    public function bills($client)
     {
-        $varoles = Value::where('duo_date', '=', $valor->date);
+        return response()->json(Bill::where('client_id','=', $client)->get());
+    }
+    public function valores($valor)
+    {
+        return response()->json(Bill::where('value','>=', $valor)->get());
+    }
+    public function valoresentre($valor1,$valor2)
+    {
+         return response()->json(Bill::where('value','>=',$valor1)->where('value','<=', $valor2)->get());
+        
     }
 }
