@@ -98,4 +98,8 @@ class ClientController extends Controller
     {
         return response()->json(Client::where('name','like', '%'.$text.'%' )->get());
     }
+    public function bills($bills)
+    {
+        return response()->json(Client::where('bills','like', '%'.$bills.'%' )->get());
+    }
 }
