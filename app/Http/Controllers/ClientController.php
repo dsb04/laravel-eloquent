@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
+use App\Models\Client;
 
 class ClientController extends Controller
 {
@@ -37,10 +37,10 @@ class ClientController extends Controller
     public function store(StoreClientRequest $request)
     {
         $client = Client::create([
-'name' => $request->name,
-'email' => $request->email,
-'phone' => $request->phone,
-'id_number' => $request->id_number,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'id_number' => $request->id_number
         ]);
         return response()->json($client);
     }
@@ -89,14 +89,22 @@ class ClientController extends Controller
     {
         //
     }
-     public function name($name)
+    public function name($name)
     {
-        $client = Client::where('name', '=', $name)->first();
-    return response()->json($client);
+        //return Client::where('name','=', '$name')->first();
+        return response()->json(Client::where('name','=', $name)->first());
     }
+
     public function text($text)
     {
+        //return Client::where('name','=', '$name')->first();
         return response()->json(Client::where('name','like', '%'.$text.'%' )->get());
     }
-    
+
+    public function order()
+    {
+        //return Client::where('name','=', '$name')->first();
+        return response()->json(Client::orderBy('name','asc')->limit(2)->get());
+    }
+
 }
