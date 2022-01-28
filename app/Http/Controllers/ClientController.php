@@ -100,6 +100,7 @@ class ClientController extends Controller
     }
     public function bills($bills)
     {
-        return response()->json(Client::where('bills','like', '%'.$bills.'%' )->get());
+        $bills = Client::where('bills', '=', $bills)->firt();
+        return response()->json($bills);
     }
 }
