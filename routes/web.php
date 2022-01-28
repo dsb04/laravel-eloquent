@@ -16,4 +16,4 @@ use App\Http\Controllers\ClientController;
 
 Route::get('/clients/create', [ClientController::class,'create']);
 Route::post('/clients/store', [ClientController::class,'store']);
-Route::post('/clients/show/{client}', [ClientController::class,'show']);
+Route::get('/clients/show/{client}', [ClientController::class,'show']);
