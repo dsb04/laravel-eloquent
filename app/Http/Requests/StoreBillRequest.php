@@ -24,13 +24,13 @@ class StoreBillRequest extends FormRequest
     public function rules()
     {
         return [
-            'fature'=>'required'
+            'invoice'=>'required'
         ];
     }
     public function messages()
     {
      return [
-     'fature.required' =>'Uma fatura é obrigatória'
+     'invoice.required' =>'Uma fatura é obrigatória'
      ];
     }
 }
