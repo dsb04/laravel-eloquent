@@ -16,7 +16,6 @@ class StoreBillRequest extends FormRequest
         $user->auth()->$user();
         if(str_contains($user->name, 'Guest')) {
             return false;
-            $user = auth()->user();
           }
         return true;
     }
