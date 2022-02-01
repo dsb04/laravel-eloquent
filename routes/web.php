@@ -64,7 +64,7 @@ Route::get('/clients/order',[
     ClientController::class, 
     'order'
 ]);
-Route::post('/bill/store', [
+Route::post('/bills/store', [
     BillController::class, 
     'store'
 ]);
