@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bill;
 use App\Http\Requests\StoreBillRequest;
 use App\Http\Requests\UpdateBillRequest;
+use App\Models\Bill;
 
 class BillController extends Controller
 {
@@ -83,13 +83,20 @@ class BillController extends Controller
     {
         //
     }
-    public function bills(Client $client)
-    { 
-        $bills = Bill::where('client_id', '=', $client->id);
-        return response()->json($bills);
-    }
-    public function valores(Value $valor)
+
+    public function bills($client)
     {
-        $varoles = Value::where('duo_date', '=', $valor->date);
+        return response()->json(Bill::where('client_id','=', $client)->get());
     }
+    public function valores($valor)
+    {
+        return response()->json(Bill::where('value','>=', $valor)->get());
+    }
+    public function valoresentre($valor1,$valor2)
+    {
+         return response()->json(Bill::where('value','>=',$valor1)->where('value','<=', $valor2)->get());
+        // return response()->json(Bill::whereBetween('value',[$valor1, $valor2])->get());
+    }
+
+    
 }
