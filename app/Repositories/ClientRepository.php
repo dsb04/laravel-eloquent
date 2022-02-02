@@ -6,7 +6,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
 
 class ClientRepository extends BaseRepository
 {
-    public function modelClient()
+    public function model()
     {
         return 'App/Models/Client';
     }
