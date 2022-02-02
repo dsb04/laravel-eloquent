@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace App\repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 
 class ClientRepository extends BaseRepository
 {
-    public function model()
+    public function Model()
     {
-        return 'App/Models/Client';
+        return 'app\Models\Client';
     }
 }
