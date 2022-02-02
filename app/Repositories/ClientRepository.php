@@ -2,13 +2,13 @@
 
 namespace App\Repositories;
 
-use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Laravel\BaseRepository;
 
 class PostRepository extends BaseRepository
 {
     public function model()
 
     {
-        return 'App\Models\Client';
+        return 'App\Models\ClientRepository';
     }
 }
