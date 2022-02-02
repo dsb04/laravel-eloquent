@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 
-class PostRepository extends BaseRepository
+class ClientRepository extends BaseRepository
 {
     public function model()
 
