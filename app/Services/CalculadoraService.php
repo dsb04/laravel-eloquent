@@ -50,4 +50,8 @@ class CalculadoraService{
 
     }
    
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 098af1121a1c34727720152104d37e413d08476a
