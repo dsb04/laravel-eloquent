@@ -43,11 +43,5 @@ class CalculadoraService{
             'message' => 'Div feita com sucesso',
             'data' => $result
         ];
-        
-        
-       
-        
-
     }
-   
 }
