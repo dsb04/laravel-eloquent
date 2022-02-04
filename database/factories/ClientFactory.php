@@ -14,7 +14,6 @@ class ClientFactory extends Factory
     public function definition()
     {
         return [
-<<<<<<< HEAD
             'name'=> $this->faker->name(),
             'email'=>$this->faker->email(),
             'phone'=>$this->faker->phoneNumber(),
@@ -22,12 +21,4 @@ class ClientFactory extends Factory
                     ];
                 }
             }
-=======
-'name'=> $this->faker->name(),
-'email'=>$this->faker->email(),
-'phone'=>$this->faker->phoneNumber(),
-'id_number'=>$this->faker->uuid
-        ];
-    }
-}
->>>>>>> 88985ef19ad080f582b55cf49e7f24bce2778820
+
