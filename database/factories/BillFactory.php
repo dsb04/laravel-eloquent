@@ -14,7 +14,12 @@ class BillFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'invoice'=> $this->faker->number(4),
+            'installment'=> $this->faker->randomDigit(),
+            'client_id'=> $this->faker->floatval(100),
+            'value'=> $this->faker->randomFloat($max=100),
+            'due_date'=> $this->faker->dateTimeInInterval('now' , '+1 week'),
+            'payment_date'=> $this->faker->dateTimeInInterval('-week')
         ];
     }
 }
