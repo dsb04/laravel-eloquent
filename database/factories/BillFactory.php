@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Illuminate\Support\Carbon;
+use Carbon\Doctrine\CarbonType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BillFactory extends Factory
@@ -17,10 +19,10 @@ class BillFactory extends Factory
         return [
             'invoice'=> $this->faker->randomnumber(4, true),
             'installment'=> $this->faker->randomDigit(),
-            'client_id'=> User::factory()->create('id'),
+            'client_id'=> User::factory(),
             'value'=> $this->faker->randomFloat(0,0,100),
-            'due_date'=> $this->faker->dateTimeInInterval('now', '+1 week'),
-            'payment_date'=> $this->faker->dateTimeInInterval('-1 week', 'now')
+            'due_date'=> Carbon::now('+1 week'),
+            'payment_date'=>Carbon::now('-1week')
         ];
     }
 }
