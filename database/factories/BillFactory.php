@@ -18,8 +18,8 @@ class BillFactory extends Factory
             'installment'=> $this->faker->randomDigit(1),
             'client_id'=> $this->faker->floatval(100),
             'value'=> $this->faker->randomFloat($max=100),
-            'due_date'=> $this->faker->dateTimeInInterval('now' , '+1 week'),
-            'payment_date'=> $this->faker->dateTimeInInterval('-week')
+            'due_date'=> $this->faker->dateTimeBetween('now' , '+1 week'),
+            'payment_date'=> $this->faker->dateTimeBetween('-week')
         ];
     }
 }
