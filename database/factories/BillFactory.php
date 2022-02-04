@@ -21,7 +21,7 @@ class BillFactory extends Factory
             'installment'=> $this->faker->randomDigit(),
             'client_id'=> User::factory(),
             'value'=> $this->faker->randomFloat(0,0,100),
-            'due_date'=> Carbon::now()->addWeekday('+1week'),
+            'due_date'=> Carbon::now()->add('+1week'),
             'payment_date'=>Carbon::now()
         ];
     }
